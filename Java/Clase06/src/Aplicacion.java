@@ -5,7 +5,7 @@ public class Aplicacion {
         
         // Creando nuestra entrada de datos
         Scanner leerString = new Scanner(System.in);
-        Scanner leerNumber = new Scanner(System.in);
+        //Scanner leerNumber = new Scanner(System.in);
 
         // Guardar nombre de 5 productos
         String[] nombres = new String[5]; // valor por defecto es null;
@@ -15,16 +15,18 @@ public class Aplicacion {
 
         for (int i = 0; i < nombres.length; i++){
             System.out.print("Ingrese el nombre del producto: ");
-            nombres[i] = leerString.nextLine();
+            nombres[i] = leerString.nextLine();     // \n
 
             System.out.print("Ingrese el precio del producto: ");
-            precios[i] = leerNumber.nextFloat();
+            precios[i] = leerString.nextFloat();
 
             System.out.print("Ingrese el costo del producto: ");
-            costos[i] = leerNumber.nextFloat();
+            costos[i] = leerString.nextFloat();
 
             System.out.print("Ingrese la existencia del producto: ");
-            existencias[i] = leerNumber.nextInt();
+            existencias[i] = leerString.nextInt();
+
+            leerString.nextLine();
         }
 
         for (int i = 0; i < nombres.length; i++){
