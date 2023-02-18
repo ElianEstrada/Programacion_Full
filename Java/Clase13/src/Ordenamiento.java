@@ -58,6 +58,28 @@ public class Ordenamiento {
         } // i=2;
     }
 
+    public static void ordenamientoSeleccion(int[] arreglo){
+        int j, k, aux;
+
+        for (int i = 0; i < arreglo.length - 1; i++){
+            k = i;
+            for (j = i + 1; j <= arreglo.length - 1; j++){
+                if (arreglo[j] < arreglo[k]) {
+                    k = j;
+                }
+
+                if (k != i){
+                    aux = arreglo[k];
+                    arreglo[k] = arreglo[i];
+                    arreglo[i] = aux;
+                }
+
+                count++;
+            }
+            count++;
+        }
+    }
+
     public static void main(String[] args) {
         
         /* Métodos de Ordenamiento
@@ -69,8 +91,9 @@ public class Ordenamiento {
         int[] arreglo = {3, 2, 5, 1, 4, 8, 6, 7};
 
         mostrarArreglo(arreglo);
-        ordernamientoBurbuja(arreglo);
+        //ordernamientoBurbuja(arreglo);
         //ordenamientoInsertar(arreglo);
+        ordenamientoSeleccion(arreglo);
         mostrarArreglo(arreglo);
 
         System.out.println("Iteraciones: " + count);
